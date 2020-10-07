@@ -27,3 +27,4 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING,
       });
 
 app.use("/users", require("./routes/userRouter"));
+app.use("/todos", require("./routes/todoRouter"));

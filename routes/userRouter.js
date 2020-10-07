@@ -11,7 +11,6 @@ const auth = require("../middleware/auth");
 router.post('/register', async (req, res) => {
       try {
             let { email, password, passwordCheck, displayName } = req.body;
-            console.log(req.body);
 
             //Validate 
             if (!email || !password || !passwordCheck)
@@ -32,7 +31,6 @@ router.post('/register', async (req, res) => {
             //Hash password
             const salt = await bcrypt.genSalt();
             const passwordHash = await bcrypt.hash(password, salt);
-            console.log(passwordHash);
 
 
             //Save user to database
